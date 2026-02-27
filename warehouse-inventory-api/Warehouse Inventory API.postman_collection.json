@@ -1,0 +1,1835 @@
+{
+	"info": {
+		"_postman_id": "23b6f4f3-cf0d-4e54-a85b-045a7919369b",
+		"name": "Warehouse Inventory API",
+		"description": "API for managing inventory across multiple warehouses.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24757019"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"mostafa ahmed\",\n    \"email\": \"mostafa.ahmed2509@gmail.com\",\n    \"password\": \"password\",\n    \"password_confirmation\": \"password\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"mostafa ahmed\",\n    \"email\": \"mostafa.ahmed2509@gmail.com\",\n    \"password\": \"password\",\n    \"password_confirmation\": \"password\"\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/register",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.30"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Feb 2026 18:42:47 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"user\": {\n            \"id\": 1,\n            \"name\": \"mostafa ahmed\",\n            \"email\": \"mostafa.ahmed2509@gmail.com\",\n            \"created_at\": \"2026-02-27T18:42:47.000000Z\",\n            \"updated_at\": \"2026-02-27T18:42:47.000000Z\"\n        },\n        \"token\": \"1|a2aBe0fm1NkpJSIpFOfF4mWn3S4wT8ImGQ2Y0wPm468f1fb6\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"let response = pm.response.json();",
+									"",
+									"let token = response.data.token;",
+									"",
+									"pm.collectionVariables.set(\"token\", token);",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"mostafa.ahmed2509@gmail.com\",\n    \"password\": \"password\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"mostafa.ahmed2509@gmail.com\",\n    \"password\": \"password\"\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.30"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Feb 2026 18:43:03 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"user\": {\n            \"id\": 1,\n            \"name\": \"mostafa ahmed\",\n            \"email\": \"mostafa.ahmed2509@gmail.com\",\n            \"created_at\": \"2026-02-27T18:42:47.000000Z\",\n            \"updated_at\": \"2026-02-27T18:42:47.000000Z\"\n        },\n        \"token\": \"2|vpUdVaQmyyBX7rFfwH40tmAVpyjaNNBQcoSKDkrT1a8d8e0c\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/logout",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Logout",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/logout",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.30"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Feb 2026 18:53:44 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Logged out successfully\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Inventory",
+			"item": [
+				{
+					"name": "List Inventory",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/inventory?min_price=10&max_price=100&per_page=15",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"inventory"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Gadget",
+									"disabled": true
+								},
+								{
+									"key": "min_price",
+									"value": "10"
+								},
+								{
+									"key": "max_price",
+									"value": "100"
+								},
+								{
+									"key": "warehouse_id",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "per_page",
+									"value": "15"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List Inventory (Paginated + Filtered)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/inventory?min_price=10&max_price=100&per_page=15",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"inventory"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Gadget",
+											"disabled": true
+										},
+										{
+											"key": "min_price",
+											"value": "10"
+										},
+										{
+											"key": "max_price",
+											"value": "100"
+										},
+										{
+											"key": "warehouse_id",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "per_page",
+											"value": "15"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.30"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Feb 2026 18:47:02 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"New Gadget\",\n            \"sku\": \"GAD-12345\",\n            \"description\": \"A very useful gadget\",\n            \"price\": 49.99,\n            \"stocks\": [],\n            \"created_at\": \"2026-02-27T18:45:59.000000Z\",\n            \"updated_at\": \"2026-02-27T18:45:59.000000Z\"\n        }\n    ],\n    \"links\": {\n        \"first\": \"http://localhost:8080/api/inventory?page=1\",\n        \"last\": \"http://localhost:8080/api/inventory?page=1\",\n        \"prev\": null,\n        \"next\": null\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 1,\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"page\": null,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8080/api/inventory?page=1\",\n                \"label\": \"1\",\n                \"page\": 1,\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"page\": null,\n                \"active\": false\n            }\n        ],\n        \"path\": \"http://localhost:8080/api/inventory\",\n        \"per_page\": 15,\n        \"to\": 1,\n        \"total\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Inventory Item",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/inventory/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"inventory",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Inventory Item",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/inventory/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"inventory",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.30"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Feb 2026 18:47:44 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Updated Gadget\",\n        \"sku\": \"GAD-12345\",\n        \"description\": \"A very useful gadget\",\n        \"price\": 59.99,\n        \"stocks\": [],\n        \"created_at\": \"2026-02-27T18:45:59.000000Z\",\n        \"updated_at\": \"2026-02-27T18:47:18.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Inventory Item",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"New Gadget\",\n    \"sku\": \"GAD-12345\",\n    \"description\": \"A very useful gadget\",\n    \"price\": 49.99\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/inventory",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"inventory"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Inventory Item",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"New Gadget\",\n    \"sku\": \"GAD-12345\",\n    \"description\": \"A very useful gadget\",\n    \"price\": 49.99\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/inventory",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"inventory"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.30"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Feb 2026 18:45:59 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"New Gadget\",\n        \"sku\": \"GAD-12345\",\n        \"description\": \"A very useful gadget\",\n        \"price\": 49.99,\n        \"created_at\": \"2026-02-27T18:45:59.000000Z\",\n        \"updated_at\": \"2026-02-27T18:45:59.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Inventory Item",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Updated Gadget\",\n    \"price\": 59.99\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/inventory/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"inventory",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Inventory Item",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Updated Gadget\",\n    \"price\": 59.99\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/inventory/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"inventory",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.30"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Feb 2026 18:47:18 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Updated Gadget\",\n        \"sku\": \"GAD-12345\",\n        \"description\": \"A very useful gadget\",\n        \"price\": 59.99,\n        \"created_at\": \"2026-02-27T18:45:59.000000Z\",\n        \"updated_at\": \"2026-02-27T18:47:18.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Inventory Item",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/inventory/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"inventory",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Warehouses",
+			"item": [
+				{
+					"name": "List Warehouses",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/warehouses",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"warehouses"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List Warehouses",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/warehouses",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"warehouses"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.30"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Feb 2026 18:48:59 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"mostafa Warehouse\",\n            \"location\": \"egypt,cairo\",\n            \"created_at\": \"2026-02-27T18:48:32.000000Z\",\n            \"updated_at\": \"2026-02-27T18:48:32.000000Z\"\n        }\n    ],\n    \"links\": {\n        \"first\": \"http://localhost:8080/api/warehouses?page=1\",\n        \"last\": \"http://localhost:8080/api/warehouses?page=1\",\n        \"prev\": null,\n        \"next\": null\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 1,\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"page\": null,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8080/api/warehouses?page=1\",\n                \"label\": \"1\",\n                \"page\": 1,\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"page\": null,\n                \"active\": false\n            }\n        ],\n        \"path\": \"http://localhost:8080/api/warehouses\",\n        \"per_page\": 15,\n        \"to\": 1,\n        \"total\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Warehouse",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/warehouses/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"warehouses",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Warehouse",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/warehouses/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"warehouses",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.30"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Feb 2026 18:49:10 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"mostafa Warehouse\",\n        \"location\": \"egypt,cairo\",\n        \"created_at\": \"2026-02-27T18:48:32.000000Z\",\n        \"updated_at\": \"2026-02-27T18:48:32.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Warehouse",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"mostafa Warehouse\",\n    \"location\": \"egypt,cairo\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/warehouses",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"warehouses"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Warehouse",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"mostafa Warehouse\",\n    \"location\": \"egypt,cairo\"\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/warehouses",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"warehouses"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.30"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Feb 2026 18:48:32 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"mostafa Warehouse\",\n        \"location\": \"egypt,cairo\",\n        \"created_at\": \"2026-02-27T18:48:32.000000Z\",\n        \"updated_at\": \"2026-02-27T18:48:32.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Warehouse",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Sheraton Warehouse\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/warehouses/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"warehouses",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Warehouse",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Sheraton Warehouse\"\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/warehouses/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"warehouses",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.30"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Feb 2026 18:50:11 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Sheraton Warehouse\",\n        \"location\": \"egypt,cairo\",\n        \"created_at\": \"2026-02-27T18:48:32.000000Z\",\n        \"updated_at\": \"2026-02-27T18:50:11.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Warehouse",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/warehouses/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"warehouses",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Warehouse",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/warehouses/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"warehouses",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.30"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Feb 2026 18:50:42 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Warehouse deleted successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Warehouse Inventory (Cached)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/warehouses/1/inventory",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"warehouses",
+								"1",
+								"inventory"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Stocks",
+			"item": [
+				{
+					"name": "Create or Update Stock",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"warehouse_id\": 1,\n    \"inventory_item_id\": 1,\n    \"quantity\": 100\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/stocks",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"stocks"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create or Update Stock",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"warehouse_id\": 2,\n    \"inventory_item_id\": 1,\n    \"quantity\": 100\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/stocks",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"stocks"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.30"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Feb 2026 18:51:25 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"warehouse_id\": 2,\n        \"inventory_item_id\": 1,\n        \"quantity\": 100,\n        \"warehouse\": {\n            \"id\": 2,\n            \"name\": \"mostafa Warehouse\",\n            \"location\": \"egypt,cairo\",\n            \"created_at\": \"2026-02-27T18:50:51.000000Z\",\n            \"updated_at\": \"2026-02-27T18:50:51.000000Z\"\n        },\n        \"inventory_item\": {\n            \"id\": 1,\n            \"name\": \"Updated Gadget\",\n            \"sku\": \"GAD-12345\",\n            \"description\": \"A very useful gadget\",\n            \"price\": 59.99,\n            \"created_at\": \"2026-02-27T18:45:59.000000Z\",\n            \"updated_at\": \"2026-02-27T18:47:18.000000Z\"\n        },\n        \"created_at\": \"2026-02-27T18:51:25.000000Z\",\n        \"updated_at\": \"2026-02-27T18:51:25.000000Z\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Stock Transfers",
+			"item": [
+				{
+					"name": "List Transfers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/stock-transfers",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"stock-transfers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transfer Stock",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from_warehouse_id\": 1,\n    \"to_warehouse_id\": 2,\n    \"inventory_item_id\": 1,\n    \"quantity\": 10\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/stock-transfers",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"stock-transfers"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Transfer Stock",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from_warehouse_id\": 2,\n    \"to_warehouse_id\": 3,\n    \"inventory_item_id\": 1,\n    \"quantity\": 10\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/stock-transfers",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"stock-transfers"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.30"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Feb 2026 18:52:48 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"from_warehouse\": {\n            \"id\": 2,\n            \"name\": \"mostafa Warehouse\",\n            \"location\": \"egypt,cairo\",\n            \"created_at\": \"2026-02-27T18:50:51.000000Z\",\n            \"updated_at\": \"2026-02-27T18:50:51.000000Z\"\n        },\n        \"to_warehouse\": {\n            \"id\": 3,\n            \"name\": \"mostafa Warehouse\",\n            \"location\": \"egypt,cairo\",\n            \"created_at\": \"2026-02-27T18:52:32.000000Z\",\n            \"updated_at\": \"2026-02-27T18:52:32.000000Z\"\n        },\n        \"inventory_item\": {\n            \"id\": 1,\n            \"name\": \"Updated Gadget\",\n            \"sku\": \"GAD-12345\",\n            \"description\": \"A very useful gadget\",\n            \"price\": 59.99,\n            \"created_at\": \"2026-02-27T18:45:59.000000Z\",\n            \"updated_at\": \"2026-02-27T18:47:18.000000Z\"\n        },\n        \"quantity\": 10,\n        \"status\": \"completed\",\n        \"transferred_by\": {\n            \"id\": 1,\n            \"name\": \"mostafa ahmed\",\n            \"email\": \"mostafa.ahmed2509@gmail.com\",\n            \"created_at\": \"2026-02-27T18:42:47.000000Z\",\n            \"updated_at\": \"2026-02-27T18:42:47.000000Z\"\n        },\n        \"created_at\": \"2026-02-27T18:52:48.000000Z\",\n        \"updated_at\": \"2026-02-27T18:52:48.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Transfer Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/stock-transfers/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"stock-transfers",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Transfer Details",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/stock-transfers/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"stock-transfers",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.30"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Feb 2026 18:53:25 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"from_warehouse\": {\n            \"id\": 2,\n            \"name\": \"mostafa Warehouse\",\n            \"location\": \"egypt,cairo\",\n            \"created_at\": \"2026-02-27T18:50:51.000000Z\",\n            \"updated_at\": \"2026-02-27T18:50:51.000000Z\"\n        },\n        \"to_warehouse\": {\n            \"id\": 3,\n            \"name\": \"mostafa Warehouse\",\n            \"location\": \"egypt,cairo\",\n            \"created_at\": \"2026-02-27T18:52:32.000000Z\",\n            \"updated_at\": \"2026-02-27T18:52:32.000000Z\"\n        },\n        \"inventory_item\": {\n            \"id\": 1,\n            \"name\": \"Updated Gadget\",\n            \"sku\": \"GAD-12345\",\n            \"description\": \"A very useful gadget\",\n            \"price\": 59.99,\n            \"created_at\": \"2026-02-27T18:45:59.000000Z\",\n            \"updated_at\": \"2026-02-27T18:47:18.000000Z\"\n        },\n        \"quantity\": 10,\n        \"status\": \"completed\",\n        \"transferred_by\": {\n            \"id\": 1,\n            \"name\": \"mostafa ahmed\",\n            \"email\": \"mostafa.ahmed2509@gmail.com\",\n            \"created_at\": \"2026-02-27T18:42:47.000000Z\",\n            \"updated_at\": \"2026-02-27T18:42:47.000000Z\"\n        },\n        \"created_at\": \"2026-02-27T18:52:48.000000Z\",\n        \"updated_at\": \"2026-02-27T18:52:48.000000Z\"\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8080/api"
+		},
+		{
+			"key": "token",
+			"value": "YOUR_TOKEN_HERE"
+		}
+	]
+}
