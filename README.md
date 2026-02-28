@@ -17,7 +17,7 @@ A simplified RESTful API for managing inventory across multiple warehouses
 ```bash
 # Clone and enter directory
 git clone https://github.com/mostafa-abuelkhair/Simple-Warehouse-Inventory-API.git
-cd Simple-Warehouse-Inventory-API/warehouse-inventory-api
+cd warehouse-inventory-api
 cp docker/env.docker .env
 
 # Start containers
